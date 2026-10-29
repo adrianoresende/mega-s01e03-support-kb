@@ -1,0 +1,61 @@
+---
+layout: runbook
+title: '#4471, split · three problems, not one'
+owner: adrianoresende
+status: proposed
+reviewed: 2026-10-28
+signature: 'v1.eyJzdG9yeSI6Im9mZiIsInN1YiI6IjU3ODEiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzIzNDA3OCwiZXhwIjoxNzkzMzIwNDc4fQ.hGN04lpW0VuxVFMid3ny98i8RO3MKKtWNVR0R4Y14X4'
+---
+
+<script>
+  import SplitTable from '#lib/kb/SplitTable.svelte';
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+[#4471](/kb/incidents/4471) says one issue with one fix queued. The reports in it say otherwise.
+Read by what each report describes and by the tenant it came from, #4471 holds three problems.
+Each now has its own ticket, with the count of reports it covers.
+
+<Callout kind="warn">
+Shipping the parser fix closes the biggest group only. The other two keep coming in.
+</Callout>
+
+## The split
+
+<SplitTable ticket={4471} repo="adrianoresende/mega-s01e03-support-kb" />
+
+1. **`parser`: the shared parser reads every date month first.** A day-first tenant's
+   `5/3` becomes 3 May. This is the fix that is queued.
+2. **`hint`: booking-v3 prints `MM/DD/YYYY` under its date field.** People at day-first
+   tenants on booking-v3 (Alder Physio, Copper Studio, Pale Harbour) type what the hint says,
+   and the form reads it the tenant's way. Only reports that came in through the form. The
+   parser fix does not touch it: the hint is wrong, not the parser.
+3. **`shift`: invites land one day off.** "Tuesday 12 May, calendar says Monday 11 May";
+   "Lisbon got Tuesday, Toronto got Monday"; "the invite arrived before I made the booking".
+   No day and month swap explains these. It is a time-zone or DST conversion bug. The desk
+   read them that way already (desk-notes), but filed them under `parser` by tenant.
+
+## How the counts were made
+
+- **One id, one report.** The export pages overlap, so some reports are in it twice. The count is over unique ids.
+- **By tenant, not by intake tag.** `intakeTag` is intake's guess from the reporter's browser.
+  The cause depends on the tenant's locale and booking form (`causes.ts`), and the two disagree.
+- **By what the report says.** Every other report names two dates that are the same day and
+  month swapped. The `shift` reports do not.
+
+## What the old page showed
+
+The table on #4471, for comparison. It puts `hint` in red with no ticket, and folds the
+one-day moves into `parser` as a footnote.
+
+<CauseTable ticket={4471} />
+
+## What changes on the desk
+
+- Matching on subject (decision 0001) merged these: the same subjects came in for all three
+  problems. Splitting needs the tenant and the body, not the subject.
+- Close #4471 against the `parser` ticket only, and keep the other two open after the fix ships.
+
+<RenderStamp {signature} />
