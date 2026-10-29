@@ -8,49 +8,43 @@ signature: 'v1.eyJzdG9yeSI6Im9mZiIsInN1YiI6IjU3ODEiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhd
 ---
 
 <script>
-  import SplitTable from '#lib/kb/SplitTable.svelte';
   import CauseTable from '#lib/kb/CauseTable.svelte';
   import Callout from '#lib/kb/Callout.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
-[#4471](/kb/incidents/4471) says one issue with one fix queued. The reports in it say otherwise.
-Read by what each report describes and by the tenant it came from, #4471 holds three problems.
-Each now has its own ticket, with the count of reports it covers.
+[#4471](/kb/incidents/4471) says one issue with one fix queued. The reports in it say otherwise:
+#4471 holds three problems. Each now has its own ticket.
+
+| problem | ticket |
+|---|---|
+| `parser`: the shared parser reads day-first dates month first | [#5](https://github.com/adrianoresende/mega-s01e03-support-kb/issues/5) |
+| `hint`: booking-v3 hints `MM/DD/YYYY` to day-first tenants | [#2](https://github.com/adrianoresende/mega-s01e03-support-kb/issues/2) |
+| one-day move: invites land one day off (time zone), not a day/month flip | [#3](https://github.com/adrianoresende/mega-s01e03-support-kb/issues/3) |
 
 <Callout kind="warn">
 Shipping the parser fix closes the biggest group only. The other two keep coming in.
 </Callout>
 
-## The split
+## How many reports each covers
 
-<SplitTable ticket={4471} repo="adrianoresende/mega-s01e03-support-kb" />
-
-1. **`parser`: the shared parser reads every date month first.** A day-first tenant's
-   `5/3` becomes 3 May. This is the fix that is queued.
-2. **`hint`: booking-v3 prints `MM/DD/YYYY` under its date field.** People at day-first
-   tenants on booking-v3 (Alder Physio, Copper Studio, Pale Harbour) type what the hint says,
-   and the form reads it the tenant's way. Only reports that came in through the form. The
-   parser fix does not touch it: the hint is wrong, not the parser.
-3. **`shift`: invites land one day off.** "Tuesday 12 May, calendar says Monday 11 May";
-   "Lisbon got Tuesday, Toronto got Monday"; "the invite arrived before I made the booking".
-   No day and month swap explains these. It is a time-zone or DST conversion bug. The desk
-   read them that way already (desk-notes), but filed them under `parser` by tenant.
-
-## How the counts were made
-
-- **One id, one report.** The export pages overlap, so some reports are in it twice. The count is over unique ids.
-- **By tenant, not by intake tag.** `intakeTag` is intake's guess from the reporter's browser.
-  The cause depends on the tenant's locale and booking form (`causes.ts`), and the two disagree.
-- **By what the report says.** Every other report names two dates that are the same day and
-  month swapped. The `shift` reports do not.
-
-## What the old page showed
-
-The table on #4471, for comparison. It puts `hint` in red with no ticket, and folds the
-one-day moves into `parser` as a footnote.
+Counted by the desk's own view: one id per report, placed by tenant (`causes.ts`), not by
+intake's tag. The one-day moves are the reports the desk already read that way (desk-notes);
+they stay counted where they are filed, under `parser`, and are the whole of ticket #3.
 
 <CauseTable ticket={4471} />
+
+## The three problems
+
+1. **`parser` ([#5](https://github.com/adrianoresende/mega-s01e03-support-kb/issues/5)).** The shared parser reads every date month first. A day-first
+   tenant's `5/3` becomes 3 May. This is the fix that is queued.
+2. **`hint` ([#2](https://github.com/adrianoresende/mega-s01e03-support-kb/issues/2)).** booking-v3 prints `MM/DD/YYYY` under its date field. People at
+   day-first tenants on booking-v3 type what the hint says, and the form reads it the tenant's
+   way. Only reports that came in through the form. The parser fix does not touch it. Today it
+   has no ticket of its own: the table above marks it in red.
+3. **One-day move ([#3](https://github.com/adrianoresende/mega-s01e03-support-kb/issues/3)).** "Tuesday 12 May, calendar says Monday 11 May"; "Lisbon got
+   Tuesday, Toronto got Monday"; "the invite arrived before I made the booking". No day and
+   month swap explains these. It is a time-zone or DST conversion bug, not the parser.
 
 ## What changes on the desk
 

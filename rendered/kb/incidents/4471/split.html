@@ -3,54 +3,52 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../../_app/immutable/entry/start.Ch-3ed_L.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/BXRcWCjR.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/CGLYzoKV.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/Dveq-gqA.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.D_NXWpIn.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/9rPeMpFC.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/CxqUl3nc.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/Bg6aD4Wv.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/CfHhmF76.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/0.BzaN_A6w.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/DmWd-KV7.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/5.P9E-OkMU.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/nzvQwgV9.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/BulAeecb.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/Dnnz4J-H.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/DLO4eN-k.js" rel="modulepreload">
+    <link href="../../../_app/immutable/entry/start.B5oxgSch.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/C9RRSZ0o.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/D2yu6NhT.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/OUjx-TTx.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.CWnIK_g9.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/nunePiGP.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CqVb2qpn.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DGaA4g0o.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/KkRs9Twq.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/0.BVzKk9rz.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/B0V4r62L.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.BOOfI_-q.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CFXWphZ6.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CqPheTXq.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Bt-lGLOa.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CHxddu44.js" rel="modulepreload">
 		<!--e2jw2j--><!----><title>#4471, split · three problems, not one · support kb</title>
 		<link href="../../../_app/immutable/assets/runbook.BhhgOc_n.css" rel="stylesheet">
 		<link href="../../../_app/immutable/assets/Callout.yLErXQDM.css" rel="stylesheet">
 		<link href="../../../_app/immutable/assets/CauseTable.DuKfINX_.css" rel="stylesheet">
-		<link href="../../../_app/immutable/assets/5.DFuDaDDP.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/5.CMZ6TBbc.css" rel="stylesheet">
   </head>
   <body data-sveltekit-preload-data="hover">
-    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471, split · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>adrianoresende</b></span> <span class="status proposed svelte-e2jw2j">proposed</span> <span class="svelte-e2jw2j">reviewed 2026-10-28 · 1 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> says one issue with one fix queued. The reports in it say otherwise.
-Read by what each report describes and by the tenant it came from, #4471 holds three problems.
-Each now has its own ticket, with the count of reports it covers.</p> <aside class="warn svelte-17bri61"><!---->Shipping the parser fix closes the biggest group only. The other two keep coming in.<!----></aside><!----> <h2>The split</h2> <p class="sum svelte-xskqqx"><strong>412</strong> reports merged into #4471 (427 rows in the export: some reports come twice, each counted once) · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code> Shared parser reads day-first dates month first</td><td>374</td><td>11</td><td>2026-04-01 → 2026-10-04</td><td><!--[0--><a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/1">adrianoresende/mega-s01e03-support-kb#1</a><!--]--></td></tr><tr><td><code>hint</code> booking-v3 form hints MM/DD/YYYY to day-first tenants</td><td>33</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td><!--[0--><a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/2">adrianoresende/mega-s01e03-support-kb#2</a><!--]--></td></tr><tr><td><code>shift</code> Invites land one day off (time zone), not a day/month flip</td><td>5</td><td>5</td><td>2026-04-02 → 2026-10-04</td><td><!--[0--><a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/3">adrianoresende/mega-s01e03-support-kb#3</a><!--]--></td></tr><!--]--></tbody></table><!----> <ol><li><strong><code>parser</code>: the shared parser reads every date month first.</strong> A day-first tenant’s <code>5/3</code> becomes 3 May. This is the fix that is queued.</li> <li><strong><code>hint</code>: booking-v3 prints <code>MM/DD/YYYY</code> under its date field.</strong> People at day-first
-tenants on booking-v3 (Alder Physio, Copper Studio, Pale Harbour) type what the hint says,
-and the form reads it the tenant’s way. Only reports that came in through the form. The
-parser fix does not touch it: the hint is wrong, not the parser.</li> <li><strong><code>shift</code>: invites land one day off.</strong> “Tuesday 12 May, calendar says Monday 11 May”;
-“Lisbon got Tuesday, Toronto got Monday”; “the invite arrived before I made the booking”.
-No day and month swap explains these. It is a time-zone or DST conversion bug. The desk
-read them that way already (desk-notes), but filed them under <code>parser</code> by tenant.</li></ol> <h2>How the counts were made</h2> <ul><li><strong>One id, one report.</strong> The export pages overlap, so some reports are in it twice. The count is over unique ids.</li> <li><strong>By tenant, not by intake tag.</strong> <code>intakeTag</code> is intake’s guess from the reporter’s browser.
-The cause depends on the tenant’s locale and booking form (<code>causes.ts</code>), and the two disagree.</li> <li><strong>By what the report says.</strong> Every other report names two dates that are the same day and
-month swapped. The <code>shift</code> reports do not.</li></ul> <h2>What the old page showed</h2> <p>The table on #4471, for comparison. It puts <code>hint</code> in red with no ticket, and folds the
-one-day moves into <code>parser</code> as a footnote.</p> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <h2>What changes on the desk</h2> <ul><li>Matching on subject (decision 0001) merged these: the same subjects came in for all three
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471, split · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>adrianoresende</b></span> <span class="status proposed svelte-e2jw2j">proposed</span> <span class="svelte-e2jw2j">reviewed 2026-10-28 · 1 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> says one issue with one fix queued. The reports in it say otherwise:
+#4471 holds three problems. Each now has its own ticket.</p> <table><thead><tr><th>problem</th><th>ticket</th></tr></thead><tbody><tr><td><code>parser</code>: the shared parser reads day-first dates month first</td><td><a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/5" rel="nofollow">#5</a></td></tr><tr><td><code>hint</code>: booking-v3 hints <code>MM/DD/YYYY</code> to day-first tenants</td><td><a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/2" rel="nofollow">#2</a></td></tr><tr><td>one-day move: invites land one day off (time zone), not a day/month flip</td><td><a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/3" rel="nofollow">#3</a></td></tr></tbody></table> <aside class="warn svelte-17bri61"><!---->Shipping the parser fix closes the biggest group only. The other two keep coming in.<!----></aside><!----> <h2>How many reports each covers</h2> <p>Counted by the desk’s own view: one id per report, placed by tenant (<code>causes.ts</code>), not by
+intake’s tag. The one-day moves are the reports the desk already read that way (desk-notes);
+they stay counted where they are filed, under <code>parser</code>, and are the whole of ticket #3.</p> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <h2>The three problems</h2> <ol><li><strong><code>parser</code> (<a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/5" rel="nofollow">#5</a>).</strong> The shared parser reads every date month first. A day-first
+tenant’s <code>5/3</code> becomes 3 May. This is the fix that is queued.</li> <li><strong><code>hint</code> (<a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/2" rel="nofollow">#2</a>).</strong> booking-v3 prints <code>MM/DD/YYYY</code> under its date field. People at
+day-first tenants on booking-v3 type what the hint says, and the form reads it the tenant’s
+way. Only reports that came in through the form. The parser fix does not touch it. Today it
+has no ticket of its own: the table above marks it in red.</li> <li><strong>One-day move (<a href="https://github.com/adrianoresende/mega-s01e03-support-kb/issues/3" rel="nofollow">#3</a>).</strong> “Tuesday 12 May, calendar says Monday 11 May”; “Lisbon got
+Tuesday, Toronto got Monday”; “the invite arrived before I made the booking”. No day and
+month swap explains these. It is a time-zone or DST conversion bug, not the parser.</li></ol> <h2>What changes on the desk</h2> <ul><li>Matching on subject (decision 0001) merged these: the same subjects came in for all three
 problems. Splitting needs the tenant and the body, not the subject.</li> <li>Close #4471 against the <code>parser</code> ticket only, and keep the other two open after the fix ships.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-NQP7-Y4TF</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_955px = {
+					__sveltekit_1egwbxa = {
 						base: new URL("../../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../../_app/immutable/entry/start.Ch-3ed_L.js"),
-						import("../../../_app/immutable/entry/app.D_NXWpIn.js")
+						import("../../../_app/immutable/entry/start.B5oxgSch.js"),
+						import("../../../_app/immutable/entry/app.CWnIK_g9.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
