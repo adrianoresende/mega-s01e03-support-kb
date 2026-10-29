@@ -11,7 +11,7 @@
 </script>
 
 <p class="sum">
-  <strong>{split.merged}</strong> reports merged into #{ticket} ({split.rows} rows in the export, one per id) ·
+  <strong>{split.merged}</strong> reports merged into #{ticket} ({split.rows} rows in the export: some reports come twice, each counted once) ·
   <strong>{split.groups.length}</strong> problems
 </p>
 
